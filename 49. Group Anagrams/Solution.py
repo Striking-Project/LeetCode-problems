@@ -3,7 +3,9 @@ class Solution:
         anagram_groups = defaultdict(list)
         
         for word in strs:
-            sorted_word = ''.join(sorted(word))
-            anagram_groups[sorted_word].append(word)
+            char_count = [0] * 26  # Count frequency of each character
+            for char in word:
+                char_count[ord(char) - ord('a')] += 1
+            anagram_groups[tuple(char_count)].append(word)
         
         return list(anagram_groups.values())
