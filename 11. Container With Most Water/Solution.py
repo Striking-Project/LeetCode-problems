@@ -4,12 +4,9 @@ class Solution:
         left, right = 0, len(height) - 1
         
         while left < right:
-            # Calculate the current area
             current_area = min(height[left], height[right]) * (right - left)
-            # Update the maximum area if necessary
             max_area = max(max_area, current_area)
             
-            # Move the pointer with the smaller height towards the center
             if height[left] < height[right]:
                 left += 1
             else:
