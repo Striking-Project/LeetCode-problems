@@ -4,7 +4,6 @@ class Solution:
 
         for i in range(k, len(nums)):
             window_sum += nums[i] - nums[i - k]
-            if max_sum < window_sum:
-                max_sum = window_sum
+            max_sum = max(max_sum, window_sum)
         
         return max_sum / k
