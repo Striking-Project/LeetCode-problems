@@ -3,9 +3,10 @@ class Solution:
         left = 0
         max_ones = 0
         zero_count = 0
+        max_window = 0
         
-        for right in range(len(nums)):
-            if nums[right] == 0:
+        for right, num in enumerate(nums):
+            if num == 0:
                 zero_count += 1
             
             while zero_count > k:
@@ -13,6 +14,6 @@ class Solution:
                     zero_count -= 1
                 left += 1
             
-            max_ones = max(max_ones, right - left + 1)
+            max_window = max(max_window, right - left + 1)
         
-        return max_ones
+        return max_window
