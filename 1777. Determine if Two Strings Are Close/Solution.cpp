@@ -1,20 +1,26 @@
 class Solution {
 public:
     bool closeStrings(string word1, string word2) {
-        unordered_map<char, int> freq1, freq2;
-        for (char ch : word1) freq1[ch]++;
-        for (char ch : word2) freq2[ch]++;
-        
-        vector<int> freq1Values, freq2Values;
-        for (auto& kv : freq1) {
-            if (!freq2.count(kv.first)) return false;
-            freq1Values.push_back(kv.second);
+        vector<int> freq1(26, 0);
+        vector<int> freq2(26, 0);
+
+        for (char ch : word1) {
+            freq1[ch - 'a']++;
         }
-        for (auto& kv : freq2) freq2Values.push_back(kv.second);
-        
-        sort(freq1Values.begin(), freq1Values.end());
-        sort(freq2Values.begin(), freq2Values.end());
-        
-        return freq1Values == freq2Values;
+
+        for (char ch : word2) {
+            freq2[ch - 'a']++;
+        }
+
+        for (int i = 0; i < 26; i++) {
+            if ((freq1[i] == 0) != (freq2[i] == 0)) {
+                return false;
+            }
+        }
+
+        sort(freq1.begin(), freq1.end());
+        sort(freq2.begin(), freq2.end());
+
+        return freq1 == freq2;
     }
 };
