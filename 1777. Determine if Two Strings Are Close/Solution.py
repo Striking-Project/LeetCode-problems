@@ -8,5 +8,5 @@ class Solution:
         
         if set(freq1.keys()) != set(freq2.keys()):
             return False
-
+        
         return sorted(freq1.values()) == sorted(freq2.values())
