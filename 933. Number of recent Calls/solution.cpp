@@ -1,5 +1,3 @@
-#include <queue>
-
 class RecentCounter {
 public:
     RecentCounter() {}
