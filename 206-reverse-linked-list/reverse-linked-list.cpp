@@ -9,7 +9,7 @@
  * };
  */
 
-// Recursive :)
+// Iterative :)
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
