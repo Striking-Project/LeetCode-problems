@@ -10,7 +10,6 @@
  */
 
 // Iterative :)
-/**
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
@@ -26,9 +25,10 @@ public:
         return prev;
     }
 };
-**/
+
 
 // Recursive 
+/**
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
@@ -42,3 +42,4 @@ public:
         return reverseHead;   
     }
 };
+**/
