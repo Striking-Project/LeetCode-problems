@@ -10,6 +10,7 @@
  */
 
 // Iterative :)
+/**
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
@@ -23,5 +24,21 @@ public:
             current = nextNode;
         }
         return prev;
+    }
+};
+**/
+
+// Recursive 
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if (!head || !head->next)
+            return head;
+        
+        ListNode* reverseHead = reverseList(head->next);
+        head->next->next = head;
+        head->next = nullptr;
+
+        return reverseHead;   
     }
 };
