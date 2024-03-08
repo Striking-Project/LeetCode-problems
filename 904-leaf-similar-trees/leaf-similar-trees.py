@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
 class Solution:
     def leafSimilar(self, root1: TreeNode, root2: TreeNode) -> bool:
         def get_leaf_values(root):
