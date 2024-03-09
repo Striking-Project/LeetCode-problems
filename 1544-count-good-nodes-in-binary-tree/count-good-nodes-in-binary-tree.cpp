@@ -15,18 +15,16 @@ public:
         return dfs(root, INT_MIN);
     }
     
-    int dfs(TreeNode* node, int max_val);
-};
-
-int Solution::dfs(TreeNode* node, int max_val) {
-    if (!node) {
-        return 0;
+    int dfs(TreeNode* node, int max_val) {
+        if (!node) {
+            return 0;
+        }
+        
+        int count = (node->val >= max_val) ? 1 : 0;
+        max_val = max(max_val, node->val);
+        int left_count = dfs(node->left, max_val);
+        int right_count = dfs(node->right, max_val);
+        
+        return count + left_count + right_count;
     }
-    
-    int count = (node->val >= max_val) ? 1 : 0;
-    max_val = max(max_val, node->val);
-    int left_count = dfs(node->left, max_val);
-    int right_count = dfs(node->right, max_val);
-    
-    return count + left_count + right_count;
-}
+};
