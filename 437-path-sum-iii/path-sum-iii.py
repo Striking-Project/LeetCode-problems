@@ -7,20 +7,23 @@
 
 class Solution:
     def pathSum(self, root: TreeNode, targetSum: int) -> int:
-        def dfs(node, target):
+        def dfs(node, current_sum, target_sum, prefix_sum_map):
             if not node:
                 return 0
             
-            count = 0
-            if node.val == target:
-                count += 1
+            current_sum += node.val
+            count = prefix_sum_map[current_sum - target_sum]
             
-            count += dfs(node.left, target - node.val)
-            count += dfs(node.right, target - node.val)
+            prefix_sum_map[current_sum] += 1
+            
+            count += dfs(node.left, current_sum, target_sum, prefix_sum_map)
+            count += dfs(node.right, current_sum, target_sum, prefix_sum_map)
+            
+            prefix_sum_map[current_sum] -= 1
             
             return count
         
-        if not root:
-            return 0
-        
-        return dfs(root, targetSum) + self.pathSum(root.left, targetSum) + self.pathSum(root.right, targetSum)
+        prefix_sum_map = defaultdict(int)
+        prefix_sum_map[0] = 1  
+                    
+        return dfs(root, 0, targetSum, prefix_sum_map)
