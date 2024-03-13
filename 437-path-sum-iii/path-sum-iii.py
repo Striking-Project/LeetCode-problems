@@ -4,7 +4,6 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
 class Solution:
     def pathSum(self, root: TreeNode, targetSum: int) -> int:
         def dfs(node, current_sum, target_sum, prefix_sum_map):
