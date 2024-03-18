@@ -4,6 +4,7 @@ public:
             int n = rooms.size();
             unordered_set<int> visited;
 
+            // lambda function
             function<void(int)> dfs = [&](int room) {
                 visited.insert(room);
                 for (int key : rooms[room]) {
