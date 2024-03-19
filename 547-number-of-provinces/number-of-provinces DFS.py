@@ -4,7 +4,6 @@ class Solution:
         for neighbor, connected in enumerate(isConnected[city]):
             if connected == 1 and not visited[neighbor]:
                 self.dfs(isConnected, visited, neighbor)
-
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         n = len(isConnected)
         visited = [False] * n
