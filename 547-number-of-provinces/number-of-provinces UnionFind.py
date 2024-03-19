@@ -20,7 +20,7 @@ class UnionFind:
                 self.parent[rootY] = rootX
                 self.rank[rootX] += 1
 
-
+#Could be done with DFS
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         n = len(isConnected)
