@@ -1,5 +1,3 @@
-#include <vector>
-
 class Solution {
 public:
     void dfs(std::vector<std::vector<int>>& isConnected, std::vector<bool>& visited, int city) {
