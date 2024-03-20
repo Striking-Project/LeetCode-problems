@@ -1,3 +1,4 @@
+#DFS
 class Solution:
     def dfs(self, adj: List[List[Tuple[int, int]]], visited: List[bool], minChange: List[int], currCity: int) -> None:
         visited[currCity] = True
@@ -6,7 +7,7 @@ class Solution:
                 if neighbourCity[1] == 1:
                     minChange[0] += 1
                 self.dfs(adj, visited, minChange, neighbourCity[0])
-    
+
     def minReorder(self, n: int, connections: List[List[int]]) -> int:
         adj = [[] for _ in range(n)]
         for connection in connections:
