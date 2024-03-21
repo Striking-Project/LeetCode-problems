@@ -8,7 +8,6 @@ public:
             }
         }
     }
-
     int findCircleNum(std::vector<std::vector<int>>& isConnected) {
         int n = isConnected.size();
         std::vector<bool> visited(n, false);
