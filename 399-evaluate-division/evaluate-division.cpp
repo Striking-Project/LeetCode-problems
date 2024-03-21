@@ -1,7 +1,6 @@
 class Solution {
 public:
     vector<double> calcEquation(vector<vector<string>>& equations, vector<double>& values, vector<vector<string>>& queries) {
-        // Construct the graph
         unordered_map<string, unordered_map<string, double>> graph;
         for (int i = 0; i < equations.size(); ++i) {
             const string& A = equations[i][0];
@@ -11,7 +10,6 @@ public:
             graph[B][A] = 1.0 / value;
         }
         
-        // Perform DFS for each query
         vector<double> results;
         for (const auto& query : queries) {
             string start = query[0];
