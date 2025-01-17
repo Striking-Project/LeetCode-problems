@@ -1,6 +1,6 @@
 # LeetCode Solutions
 
-This repository contains my solutions to LeetCode problems. Each solution is implemented in Python.
+This repository contains my solutions to LeetCode problems. Each solution is implemented in Python/C++.
 
 ## Structure
 
